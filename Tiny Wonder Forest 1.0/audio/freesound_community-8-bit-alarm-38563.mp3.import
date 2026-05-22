@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ojwkvvumbgtg"
+path="res://.godot/imported/freesound_community-8-bit-alarm-38563.mp3-61bd30a30bf009dea7a6d8244dff69b8.mp3str"
+
+[deps]
+
+source_file="res://Tiny Wonder Forest 1.0/audio/freesound_community-8-bit-alarm-38563.mp3"
+dest_files=["res://.godot/imported/freesound_community-8-bit-alarm-38563.mp3-61bd30a30bf009dea7a6d8244dff69b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

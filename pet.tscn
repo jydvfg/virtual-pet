@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://c4jnnlp3cfplu"]
+
+[ext_resource type="Texture2D" uid="uid://c0cher82us6pa" path="res://Tiny Wonder Forest 1.0/items&objects/morestates.png" id="1_621w0"]
+[ext_resource type="Texture2D" uid="uid://cn2nk22j3m876" path="res://Tiny Wonder Forest 1.0/baby_texture.tres" id="1_x5jns"]
+[ext_resource type="Texture2D" uid="uid://q650x4bm18u8" path="res://Tiny Wonder Forest 1.0/CottonBooFree/CottonBooFree/sleeping.png" id="2_w32yi"]
+[ext_resource type="Script" uid="uid://nugr03jmdsff" path="res://node.gd" id="3_us1xf"]
+[ext_resource type="Script" uid="uid://dmgh6lodrk3oj" path="res://idle.gd" id="4_621w0"]
+[ext_resource type="Script" uid="uid://yiax3hj5ud6n" path="res://eating.gd" id="5_qqo4d"]
+[ext_resource type="Script" uid="uid://dxqatfnourd76" path="res://sleep.gd" id="6_6e2du"]
+[ext_resource type="Texture2D" uid="uid://byioo535firjx" path="res://Tiny Wonder Forest 1.0/sandwidge.png" id="7_phljq"]
+[ext_resource type="Script" uid="uid://d0us3v47tovku" path="res://dancing.gd" id="7_w32yi"]
+[ext_resource type="Script" uid="uid://caoseu8vs8fj8" path="res://time_label.gd" id="8_dkavk"]
+[ext_resource type="Texture2D" uid="uid://do44yowkips6" path="res://Tiny Wonder Forest 1.0/items&objects/dance.png" id="9_us1xf"]
+[ext_resource type="Script" uid="uid://c8yinlk8ww211" path="res://pet_stats.gd" id="12_qqo4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqo4d"]
+atlas = ExtResource("1_621w0")
+region = Rect2(0, 0, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e2du"]
+atlas = ExtResource("1_621w0")
+region = Rect2(39, 0, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phljq"]
+atlas = ExtResource("1_621w0")
+region = Rect2(78, 0, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkavk"]
+atlas = ExtResource("1_621w0")
+region = Rect2(0, 39, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11scu"]
+atlas = ExtResource("1_621w0")
+region = Rect2(39, 39, 39, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(0, 40, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(43, 40, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(0, 80, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(43, 80, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(86, 80, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(0, 200, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(43, 200, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("1_x5jns")
+region = Rect2(0, 240, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
+atlas = ExtResource("2_w32yi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
+atlas = ExtResource("2_w32yi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
+atlas = ExtResource("2_w32yi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nhjh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqo4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e2du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phljq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkavk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11scu")
+}],
+"loop": true,
+"name": &"dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj586")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d7sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir8iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqns4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0ka3")
+}],
+"loop": true,
+"name": &"eating",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d21ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epypp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hol4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6r6c")
+}],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}]
+
+[node name="Pet" type="Node2D" unique_id=2134329944]
+position = Vector2(521, 349)
+
+[node name="character" type="AnimatedSprite2D" parent="." unique_id=435054265]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_2nhjh")
+animation = &"dancing"
+
+[node name="StateMachine" type="Node" parent="character" unique_id=10446879 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_us1xf")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="character/StateMachine" unique_id=91260209 node_paths=PackedStringArray("pet_sprite")]
+script = ExtResource("4_621w0")
+pet_sprite = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="character/StateMachine/IdleState" unique_id=1006375372]
+wait_time = 30.0
+
+[node name="EatingState" type="Node" parent="character/StateMachine" unique_id=385166267 node_paths=PackedStringArray("pet_sprite")]
+script = ExtResource("5_qqo4d")
+pet_sprite = NodePath("../..")
+
+[node name="SleepingState" type="Node" parent="character/StateMachine" unique_id=1081889372]
+script = ExtResource("6_6e2du")
+
+[node name="Timer" type="Timer" parent="character/StateMachine/SleepingState" unique_id=2044185212]
+wait_time = 36000.0
+
+[node name="DancingState" type="Node" parent="character/StateMachine" unique_id=1944329732 node_paths=PackedStringArray("pet_sprite")]
+script = ExtResource("7_w32yi")
+pet_sprite = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="character/StateMachine/DancingState" unique_id=1181558482]
+wait_time = 3.0
+
+[node name="Feed" type="TextureButton" parent="." unique_id=1426316235]
+offset_left = -195.0
+offset_top = 159.0
+offset_right = -108.0
+offset_bottom = 248.0
+texture_normal = ExtResource("7_phljq")
+stretch_mode = 0
+
+[node name="Dance" type="TextureButton" parent="." unique_id=112946050]
+offset_left = -70.0
+offset_top = 160.0
+offset_right = 17.0
+offset_bottom = 249.0
+texture_normal = ExtResource("9_us1xf")
+stretch_mode = 0
+
+[node name="TimeLabel" type="Label" parent="." unique_id=615060253]
+offset_left = -440.0
+offset_top = -321.0
+offset_right = -400.0
+offset_bottom = -298.0
+text = "ho"
+script = ExtResource("8_dkavk")
+
+[node name="Timer" type="Timer" parent="TimeLabel" unique_id=908831117]
+
+[node name="PetStats" type="Node" parent="." unique_id=349101546]
+script = ExtResource("12_qqo4d")
+
+[node name="Timer" type="Timer" parent="PetStats" unique_id=2066307623]
+wait_time = 21600.0
+
+[connection signal="sleep_signal" from="character/StateMachine/IdleState" to="character/StateMachine/SleepingState" method="_on_idle_state_sleep_signal"]
+[connection signal="timeout" from="character/StateMachine/IdleState/Timer" to="character/StateMachine/IdleState" method="_on_timer_timeout"]
+[connection signal="wake_signal" from="character/StateMachine/SleepingState" to="character/StateMachine/IdleState" method="_on_sleeping_state_wake_signal"]
+[connection signal="timeout" from="character/StateMachine/SleepingState/Timer" to="character/StateMachine/SleepingState" method="_on_timer_timeout"]
+[connection signal="timeout" from="character/StateMachine/DancingState/Timer" to="character/StateMachine/DancingState" method="_on_timer_timeout"]
+[connection signal="pressed" from="Feed" to="character/StateMachine" method="_on_feed_pressed"]
+[connection signal="pressed" from="Dance" to="character/StateMachine" method="_on_dance_pressed"]
+[connection signal="timeout" from="TimeLabel/Timer" to="TimeLabel" method="_on_timer_timeout"]
+[connection signal="timeout" from="PetStats/Timer" to="PetStats" method="_on_timer_timeout"]
