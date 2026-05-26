@@ -1,17 +1,24 @@
 [gd_scene format=3 uid="uid://c4jnnlp3cfplu"]
 
 [ext_resource type="Texture2D" uid="uid://c0cher82us6pa" path="res://Tiny Wonder Forest 1.0/items&objects/morestates.png" id="1_621w0"]
+[ext_resource type="Script" uid="uid://c0uo1qevylrew" path="res://pet.gd" id="1_m1av8"]
 [ext_resource type="Texture2D" uid="uid://cn2nk22j3m876" path="res://Tiny Wonder Forest 1.0/baby_texture.tres" id="1_x5jns"]
 [ext_resource type="Texture2D" uid="uid://q650x4bm18u8" path="res://Tiny Wonder Forest 1.0/CottonBooFree/CottonBooFree/sleeping.png" id="2_w32yi"]
+[ext_resource type="Texture2D" uid="uid://yevxtrbx8c3f" path="res://Tiny Wonder Forest 1.0/Game Boy _ GBC - Tamagotchi - Tamagotchis - Shirobabytchi.png" id="3_11scu"]
 [ext_resource type="Script" uid="uid://nugr03jmdsff" path="res://node.gd" id="3_us1xf"]
 [ext_resource type="Script" uid="uid://dmgh6lodrk3oj" path="res://idle.gd" id="4_621w0"]
 [ext_resource type="Script" uid="uid://yiax3hj5ud6n" path="res://eating.gd" id="5_qqo4d"]
 [ext_resource type="Script" uid="uid://dxqatfnourd76" path="res://sleep.gd" id="6_6e2du"]
+[ext_resource type="AudioStream" uid="uid://gvpy2n37svph" path="res://Tiny Wonder Forest 1.0/audio/freesound_community-gameboy-pluck-41265.mp3" id="7_6e2du"]
 [ext_resource type="Texture2D" uid="uid://byioo535firjx" path="res://Tiny Wonder Forest 1.0/sandwidge.png" id="7_phljq"]
 [ext_resource type="Script" uid="uid://d0us3v47tovku" path="res://dancing.gd" id="7_w32yi"]
 [ext_resource type="Script" uid="uid://caoseu8vs8fj8" path="res://time_label.gd" id="8_dkavk"]
 [ext_resource type="Texture2D" uid="uid://do44yowkips6" path="res://Tiny Wonder Forest 1.0/items&objects/dance.png" id="9_us1xf"]
+[ext_resource type="AudioStream" uid="uid://dq0uakgpdbbfb" path="res://Tiny Wonder Forest 1.0/audio/freesound_community-8-bit-powerup-6768.mp3" id="10_phljq"]
+[ext_resource type="Script" uid="uid://imth35lmspwn" path="res://hungry_state.gd" id="12_0ccft"]
 [ext_resource type="Script" uid="uid://c8yinlk8ww211" path="res://pet_stats.gd" id="12_qqo4d"]
+[ext_resource type="AudioStream" uid="uid://blfbgky0ru51d" path="res://Tiny Wonder Forest 1.0/audio/freesound_community-8-bit-wrong-2-84407.mp3" id="13_0ccft"]
+[ext_resource type="FontFile" uid="uid://cd3cuk3y8mgag" path="res://Tiny Wonder Forest 1.0/bytebounce/ByteBounce.ttf" id="16_myjb5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqo4d"]
 atlas = ExtResource("1_621w0")
@@ -52,6 +59,14 @@ region = Rect2(43, 80, 43, 40)
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
 atlas = ExtResource("1_x5jns")
 region = Rect2(86, 80, 43, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myjb5"]
+atlas = ExtResource("3_11scu")
+region = Rect2(0, 54, 22, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1av8"]
+atlas = ExtResource("3_11scu")
+region = Rect2(22, 54, 22, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
 atlas = ExtResource("1_x5jns")
@@ -121,6 +136,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_myjb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1av8")
+}],
+"loop": true,
+"name": &"hungry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_d21ai")
 }, {
 "duration": 1.0,
@@ -148,13 +174,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_m1av8"]
+font = ExtResource("16_myjb5")
+font_size = 60
+
 [node name="Pet" type="Node2D" unique_id=2134329944]
 position = Vector2(521, 349)
+script = ExtResource("1_m1av8")
 
 [node name="character" type="AnimatedSprite2D" parent="." unique_id=435054265]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_2nhjh")
-animation = &"dancing"
+animation = &"hungry"
+frame_progress = 0.3519581
 
 [node name="StateMachine" type="Node" parent="character" unique_id=10446879 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_us1xf")
@@ -171,6 +203,9 @@ wait_time = 30.0
 script = ExtResource("5_qqo4d")
 pet_sprite = NodePath("../..")
 
+[node name="EatSound" type="AudioStreamPlayer2D" parent="character/StateMachine/EatingState" unique_id=198822440]
+stream = ExtResource("7_6e2du")
+
 [node name="SleepingState" type="Node" parent="character/StateMachine" unique_id=1081889372]
 script = ExtResource("6_6e2du")
 
@@ -183,6 +218,17 @@ pet_sprite = NodePath("../..")
 
 [node name="Timer" type="Timer" parent="character/StateMachine/DancingState" unique_id=1181558482]
 wait_time = 3.0
+
+[node name="DanceSound" type="AudioStreamPlayer2D" parent="character/StateMachine/DancingState" unique_id=507298603]
+stream = ExtResource("10_phljq")
+
+[node name="HungryState" type="Node" parent="character/StateMachine" unique_id=28823201 node_paths=PackedStringArray("pet_sprite")]
+script = ExtResource("12_0ccft")
+pet_sprite = NodePath("../..")
+metadata/_custom_type_script = "uid://d3qc84f3j6wtu"
+
+[node name="HungrySound" type="AudioStreamPlayer2D" parent="character/StateMachine/HungryState" unique_id=980637937]
+stream = ExtResource("13_0ccft")
 
 [node name="Feed" type="TextureButton" parent="." unique_id=1426316235]
 offset_left = -195.0
@@ -206,6 +252,7 @@ offset_top = -321.0
 offset_right = -400.0
 offset_bottom = -298.0
 text = "ho"
+label_settings = SubResource("LabelSettings_m1av8")
 script = ExtResource("8_dkavk")
 
 [node name="Timer" type="Timer" parent="TimeLabel" unique_id=908831117]
@@ -213,8 +260,8 @@ script = ExtResource("8_dkavk")
 [node name="PetStats" type="Node" parent="." unique_id=349101546]
 script = ExtResource("12_qqo4d")
 
-[node name="Timer" type="Timer" parent="PetStats" unique_id=2066307623]
-wait_time = 21600.0
+[node name="DateTimer" type="Timer" parent="PetStats" unique_id=2066307623]
+wait_time = 3.0
 
 [connection signal="sleep_signal" from="character/StateMachine/IdleState" to="character/StateMachine/SleepingState" method="_on_idle_state_sleep_signal"]
 [connection signal="timeout" from="character/StateMachine/IdleState/Timer" to="character/StateMachine/IdleState" method="_on_timer_timeout"]
@@ -222,6 +269,8 @@ wait_time = 21600.0
 [connection signal="timeout" from="character/StateMachine/SleepingState/Timer" to="character/StateMachine/SleepingState" method="_on_timer_timeout"]
 [connection signal="timeout" from="character/StateMachine/DancingState/Timer" to="character/StateMachine/DancingState" method="_on_timer_timeout"]
 [connection signal="pressed" from="Feed" to="character/StateMachine" method="_on_feed_pressed"]
+[connection signal="pressed" from="Feed" to="character/StateMachine/HungryState" method="_on_feed_pressed"]
 [connection signal="pressed" from="Dance" to="character/StateMachine" method="_on_dance_pressed"]
 [connection signal="timeout" from="TimeLabel/Timer" to="TimeLabel" method="_on_timer_timeout"]
-[connection signal="timeout" from="PetStats/Timer" to="PetStats" method="_on_timer_timeout"]
+[connection signal="hungry" from="PetStats" to="character/StateMachine/IdleState" method="_on_pet_stats_hungry"]
+[connection signal="timeout" from="PetStats/DateTimer" to="PetStats" method="_on_timer_timeout"]

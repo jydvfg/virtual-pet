@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" format=3 uid="uid://cn2nk22j3m876"]
-
-[ext_resource type="Texture2D" uid="uid://da4cdmrr4ij0x" path="res://Tiny Wonder Forest 1.0/Game Boy _ GBC - Tamagotchi - Tamagotchis - Marutchi.png" id="1_itt5j"]
-
-[resource]
-atlas = ExtResource("1_itt5j")
-region = Rect2(0, 1.186615, 130.0527, 366.8134)
