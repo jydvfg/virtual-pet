@@ -44,3 +44,7 @@ func _on_feed_pressed() -> void:
 func _on_dance_pressed() -> void:
 	print("dancedance")
 	on_child_transition(current_state, "dancingstate")
+
+
+func _on_meds_pressed() -> void:
+	on_child_transition(current_state, "eatingstate")

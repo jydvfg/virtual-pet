@@ -31,3 +31,7 @@ func _on_sleeping_state_wake_signal() -> void:
 func _on_pet_stats_hungry() -> void:
 	print("IdleState received hungry signal")
 	transitioned.emit(self, "hungrystate")
+
+
+func _on_pet_stats_sick() -> void:
+	transitioned.emit(self, "sickstate")
