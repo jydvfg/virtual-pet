@@ -12,6 +12,9 @@ signal sick
 @onready var days_past = 0
 @onready var date_timer = $DateTimer
 @onready var current_date = Time.get_date_dict_from_system()
+@onready var pet_sprite = $"../character"
+@onready var baby_frames = preload("res://spriteframes/baby_sprite_frames.tres")
+@onready var young_frames = preload("res://spriteframes/young_sprite_frames.tres")
 
 
 func _ready() -> void:
@@ -20,7 +23,7 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	var new_date = Time.get_date_dict_from_system()
-	check_date(current_date, new_date)
+	check_date(new_date)
 	var current_time = Time.get_time_string_from_system().substr(0,2).to_int()
 	if current_time >= 10 and med_tally == 0:
 		sick.emit()
@@ -31,11 +34,11 @@ func _on_timer_timeout() -> void:
 	
 	
 	
-func check_date(date1, date2):
-	var prev: int = date1.year * 10000  + date1.month * 100 + date1.day
-	var new: int = date2.year * 10000 + date2.month * 100 + date2.day
+func check_date(new_date):
+	var prev: int = current_date.year * 10000  + current_date.month * 100 + current_date.day
+	var new: int = new_date.year * 10000 + new_date.month * 100 + new_date.day
 	if new > prev:
-		date1 = date2
+		current_date = new_date
 		if med_tally == 1:
 			health_score +=1 
 			med_tally = 0
@@ -44,6 +47,7 @@ func check_date(date1, date2):
 			eat_tally = 0
 		days_past +=1 
 		if days_past == 8:
+			pet_growth()
 			food_score = 0
 			health_score = 0
 			fitness_score = 0
@@ -51,13 +55,23 @@ func check_date(date1, date2):
 			days_past = 0
 				
 
-
-func _on_feed_pressed() -> void:
-	eat_tally += 1
+func pet_growth():
+	var total_score = food_score + health_score + fitness_score + study_score
+	if total_score > 18:
+		if pet_sprite.sprite_frames == baby_frames:
+			pet_sprite.sprite_frames = young_frames
 	
-
+			
 func _on_meds_pressed() -> void:
 	med_tally += 1
 
 func _on_dance_pressed() -> void:
 	fitness_score +=1 
+
+
+func _on_feed_healthy_pressed() -> void:
+	eat_tally += 1
+
+
+func _on_study_pressed() -> void:
+	study_score +=1

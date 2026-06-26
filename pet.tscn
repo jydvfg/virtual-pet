@@ -1,218 +1,37 @@
 [gd_scene format=3 uid="uid://c4jnnlp3cfplu"]
 
-[ext_resource type="Texture2D" uid="uid://c0cher82us6pa" path="res://assets/items&objects/morestates.png" id="1_621w0"]
 [ext_resource type="Script" uid="uid://c0uo1qevylrew" path="res://pet.gd" id="1_m1av8"]
-[ext_resource type="Texture2D" uid="uid://cn2nk22j3m876" path="res://assets/baby_texture.tres" id="1_x5jns"]
-[ext_resource type="Texture2D" uid="uid://q650x4bm18u8" path="res://assets/CottonBooFree/CottonBooFree/sleeping.png" id="2_w32yi"]
-[ext_resource type="Texture2D" uid="uid://yevxtrbx8c3f" path="res://assets/Game Boy _ GBC - Tamagotchi - Tamagotchis - Shirobabytchi.png" id="3_11scu"]
+[ext_resource type="SpriteFrames" uid="uid://dy5yytr3m13fs" path="res://spriteframes/young_sprite_frames.tres" id="2_djl34"]
 [ext_resource type="Script" uid="uid://nugr03jmdsff" path="res://node.gd" id="3_us1xf"]
 [ext_resource type="Script" uid="uid://dmgh6lodrk3oj" path="res://idle.gd" id="4_621w0"]
-[ext_resource type="Texture2D" uid="uid://dcjxrgan6gg8i" path="res://assets/Game Boy _ GBC - Tamagotch 3rd.png" id="5_2nba3"]
 [ext_resource type="Script" uid="uid://yiax3hj5ud6n" path="res://eating.gd" id="5_qqo4d"]
 [ext_resource type="Script" uid="uid://dxqatfnourd76" path="res://sleep.gd" id="6_6e2du"]
 [ext_resource type="AudioStream" uid="uid://gvpy2n37svph" path="res://assets/audio/freesound_community-gameboy-pluck-41265.mp3" id="7_6e2du"]
 [ext_resource type="Texture2D" uid="uid://byioo535firjx" path="res://assets/sandwidge.png" id="7_phljq"]
 [ext_resource type="Script" uid="uid://d0us3v47tovku" path="res://dancing.gd" id="7_w32yi"]
 [ext_resource type="Script" uid="uid://caoseu8vs8fj8" path="res://time_label.gd" id="8_dkavk"]
-[ext_resource type="Texture2D" uid="uid://do44yowkips6" path="res://assets/items&objects/dance.png" id="9_us1xf"]
 [ext_resource type="AudioStream" uid="uid://dq0uakgpdbbfb" path="res://assets/audio/freesound_community-8-bit-powerup-6768.mp3" id="10_phljq"]
 [ext_resource type="Script" uid="uid://imth35lmspwn" path="res://hungry_state.gd" id="12_0ccft"]
 [ext_resource type="Script" uid="uid://c8yinlk8ww211" path="res://pet_stats.gd" id="12_qqo4d"]
+[ext_resource type="Texture2D" uid="uid://dnho5f6fcbpcb" path="res://assets/items&objects/buttons/pause.png" id="13_0bf13"]
 [ext_resource type="AudioStream" uid="uid://blfbgky0ru51d" path="res://assets/audio/freesound_community-8-bit-wrong-2-84407.mp3" id="13_0ccft"]
 [ext_resource type="Script" uid="uid://cjnawpep5te6a" path="res://sick.gd" id="16_2nba3"]
 [ext_resource type="FontFile" uid="uid://cd3cuk3y8mgag" path="res://assets/bytebounce/ByteBounce.ttf" id="16_myjb5"]
+[ext_resource type="Texture2D" uid="uid://sqqdwb2doadq" path="res://assets/14.png" id="18_sjut6"]
 [ext_resource type="Texture2D" uid="uid://d1g5d6j0ltw8d" path="res://assets/24.png" id="20_0bf13"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qqo4d"]
-atlas = ExtResource("1_621w0")
-region = Rect2(0, 0, 39, 39)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6e2du"]
-atlas = ExtResource("1_621w0")
-region = Rect2(39, 0, 39, 39)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phljq"]
-atlas = ExtResource("1_621w0")
-region = Rect2(78, 0, 39, 39)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dkavk"]
-atlas = ExtResource("1_621w0")
-region = Rect2(0, 39, 39, 39)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_11scu"]
-atlas = ExtResource("1_621w0")
-region = Rect2(39, 39, 39, 39)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(0, 40, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(43, 40, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(0, 80, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(43, 80, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(86, 80, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_myjb5"]
-atlas = ExtResource("3_11scu")
-region = Rect2(0, 54, 22, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1av8"]
-atlas = ExtResource("3_11scu")
-region = Rect2(22, 54, 22, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(0, 200, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(43, 200, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
-atlas = ExtResource("1_x5jns")
-region = Rect2(0, 240, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0bf13"]
-atlas = ExtResource("5_2nba3")
-region = Rect2(0, 120, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sjut6"]
-atlas = ExtResource("5_2nba3")
-region = Rect2(43, 120, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qrkd0"]
-atlas = ExtResource("5_2nba3")
-region = Rect2(0, 160, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o7tcy"]
-atlas = ExtResource("5_2nba3")
-region = Rect2(43, 160, 43, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
-atlas = ExtResource("2_w32yi")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
-atlas = ExtResource("2_w32yi")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
-atlas = ExtResource("2_w32yi")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2nhjh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qqo4d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6e2du")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phljq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dkavk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_11scu")
-}],
-"loop": true,
-"name": &"dancing",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rj586")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4d7sh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ir8iy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hqns4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x0ka3")
-}],
-"loop": true,
-"name": &"eating",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_myjb5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m1av8")
-}],
-"loop": true,
-"name": &"hungry",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d21ai")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0h7mo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nr8wp")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0bf13")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sjut6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qrkd0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o7tcy")
-}],
-"loop": true,
-"name": &"sick",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_epypp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0hol4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q6r6c")
-}],
-"loop": true,
-"name": &"sleeping",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://c5u2p32j5227u" path="res://assets/book.png" id="20_sjut6"]
+[ext_resource type="Texture2D" uid="uid://tufhq44c1vdv" path="res://assets/fit.png" id="21_qrkd0"]
+[ext_resource type="Texture2D" uid="uid://cq0g7xpcl33ve" path="res://assets/items&objects/buttons/arrow.png" id="23_qrkd0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m1av8"]
 font = ExtResource("16_myjb5")
 font_size = 60
+
+[sub_resource type="Theme" id="Theme_o7tcy"]
+default_font = ExtResource("16_myjb5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gda0o"]
+font_size = 58
 
 [node name="Pet" type="Node2D" unique_id=2134329944]
 position = Vector2(521, 349)
@@ -221,9 +40,9 @@ script = ExtResource("1_m1av8")
 [node name="character" type="AnimatedSprite2D" parent="." unique_id=435054265]
 position = Vector2(143.99998, -147.99998)
 scale = Vector2(10, 10)
-sprite_frames = SubResource("SpriteFrames_2nhjh")
-animation = &"sick"
-frame_progress = 0.9935444
+sprite_frames = ExtResource("2_djl34")
+animation = &"dancing"
+frame_progress = 0.4304509
 
 [node name="StateMachine" type="Node" parent="character" unique_id=10446879 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_us1xf")
@@ -275,27 +94,52 @@ metadata/_custom_type_script = "uid://d3qc84f3j6wtu"
 [node name="SickSound" type="AudioStreamPlayer2D" parent="character/StateMachine/SickState" unique_id=9933369]
 stream = ExtResource("13_0ccft")
 
+[node name="Pause" type="TextureButton" parent="." unique_id=342656949]
+offset_left = 439.0
+offset_top = -317.0
+offset_right = 503.0
+offset_bottom = -253.0
+texture_normal = ExtResource("13_0bf13")
+
 [node name="Feed" type="TextureButton" parent="." unique_id=1426316235]
-offset_left = -195.0
-offset_top = 159.0
-offset_right = -108.0
-offset_bottom = 248.0
+offset_left = 90.0
+offset_top = 163.0
+offset_right = 177.0
+offset_bottom = 252.0
 texture_normal = ExtResource("7_phljq")
 stretch_mode = 0
 
+[node name="FeedHealthy" type="TextureButton" parent="." unique_id=145590669]
+offset_left = -14.0
+offset_top = 167.0
+offset_right = 73.0
+offset_bottom = 256.0
+texture_normal = ExtResource("18_sjut6")
+stretch_mode = 0
+
 [node name="Dance" type="TextureButton" parent="." unique_id=112946050]
-offset_left = -70.0
-offset_top = 160.0
-offset_right = 17.0
-offset_bottom = 249.0
-texture_normal = ExtResource("9_us1xf")
+offset_left = 216.0
+offset_top = 163.99997
+offset_right = 527.0
+offset_bottom = 414.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("21_qrkd0")
+stretch_mode = 0
+
+[node name="Study" type="TextureButton" parent="." unique_id=1855769188]
+offset_left = 447.0
+offset_top = 148.99997
+offset_right = 470.0
+offset_bottom = 171.99997
+scale = Vector2(5, 5)
+texture_normal = ExtResource("20_sjut6")
 stretch_mode = 0
 
 [node name="Meds" type="TextureButton" parent="." unique_id=1439104033]
-offset_left = 51.0
-offset_top = 161.0
-offset_right = 91.0
-offset_bottom = 201.0
+offset_left = 336.0
+offset_top = 165.0
+offset_right = 376.0
+offset_bottom = 205.0
 scale = Vector2(2.9999976, 2.8000011)
 texture_normal = ExtResource("20_0bf13")
 
@@ -316,19 +160,66 @@ script = ExtResource("12_qqo4d")
 [node name="DateTimer" type="Timer" parent="PetStats" unique_id=2066307623]
 wait_time = 3.0
 
+[node name="PauseOverlay" type="Panel" parent="." unique_id=169235727]
+process_mode = 2
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -78.5
+offset_right = 202.0
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "PAUSED"
+theme = SubResource("Theme_o7tcy")
+
+[node name="Label" type="Label" parent="PauseOverlay" unique_id=690440832]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -40.0
+offset_right = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_gda0o")
+
+[node name="Play" type="TextureButton" parent="PauseOverlay/Label" unique_id=1421959925]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 30.0
+offset_right = 105.0
+offset_bottom = 94.0
+texture_normal = ExtResource("23_qrkd0")
+
 [connection signal="sleep_signal" from="character/StateMachine/IdleState" to="character/StateMachine/SleepingState" method="_on_idle_state_sleep_signal"]
 [connection signal="timeout" from="character/StateMachine/IdleState/Timer" to="character/StateMachine/IdleState" method="_on_timer_timeout"]
 [connection signal="wake_signal" from="character/StateMachine/SleepingState" to="character/StateMachine/IdleState" method="_on_sleeping_state_wake_signal"]
 [connection signal="timeout" from="character/StateMachine/SleepingState/Timer" to="character/StateMachine/SleepingState" method="_on_timer_timeout"]
 [connection signal="timeout" from="character/StateMachine/DancingState/Timer" to="character/StateMachine/DancingState" method="_on_timer_timeout"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="Feed" to="character/StateMachine" method="_on_feed_pressed"]
 [connection signal="pressed" from="Feed" to="character/StateMachine/HungryState" method="_on_feed_pressed"]
-[connection signal="pressed" from="Feed" to="PetStats" method="_on_feed_pressed"]
+[connection signal="pressed" from="FeedHealthy" to="character/StateMachine" method="_on_feed_healthy_pressed"]
+[connection signal="pressed" from="FeedHealthy" to="PetStats" method="_on_feed_healthy_pressed"]
 [connection signal="pressed" from="Dance" to="character/StateMachine" method="_on_dance_pressed"]
 [connection signal="pressed" from="Dance" to="PetStats" method="_on_dance_pressed"]
+[connection signal="pressed" from="Study" to="character/StateMachine" method="_on_study_pressed"]
+[connection signal="pressed" from="Study" to="PetStats" method="_on_study_pressed"]
 [connection signal="pressed" from="Meds" to="character/StateMachine" method="_on_meds_pressed"]
 [connection signal="pressed" from="Meds" to="PetStats" method="_on_meds_pressed"]
 [connection signal="timeout" from="TimeLabel/Timer" to="TimeLabel" method="_on_timer_timeout"]
 [connection signal="hungry" from="PetStats" to="character/StateMachine/IdleState" method="_on_pet_stats_hungry"]
 [connection signal="sick" from="PetStats" to="character/StateMachine/IdleState" method="_on_pet_stats_sick"]
 [connection signal="timeout" from="PetStats/DateTimer" to="PetStats" method="_on_timer_timeout"]
+[connection signal="pressed" from="PauseOverlay/Label/Play" to="." method="_on_play_pressed"]

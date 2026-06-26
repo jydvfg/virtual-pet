@@ -48,3 +48,11 @@ func _on_dance_pressed() -> void:
 
 func _on_meds_pressed() -> void:
 	on_child_transition(current_state, "eatingstate")
+
+
+func _on_feed_healthy_pressed() -> void:
+	on_child_transition(current_state, "eatingstate")
+
+
+func _on_study_pressed() -> void:
+	on_child_transition(current_state, "dancingstate")
