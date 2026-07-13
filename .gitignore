@@ -1,6 +1,7 @@
-# Godot 4+ specific ignores
 .godot/
 /android/
 /assets/
 /voice-assistant/vosk-model-small-en-us-0.15/
-
+/voice-assistant/model
+/voice-assistant/voices
+/voice-assistant/python_out.wav
