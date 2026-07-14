@@ -5,3 +5,6 @@
 /voice-assistant/model
 /voice-assistant/voices
 /voice-assistant/python_out.wav
+/voice-assistant/python_out.wav.import
+/voice-assistant/.env
+/voice-assistant/__pycache__
