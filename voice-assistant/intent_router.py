@@ -7,6 +7,10 @@ load_dotenv(override=True)
 def listen(input):
     if "pet" in input:
         pet_handler(input)
+    elif "assistant" in input:
+        return input
+    else:
+        pass
 
 def pet_handler(prompt):
     host = os.getenv("LOCALHOST")

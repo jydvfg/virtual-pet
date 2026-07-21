@@ -53,6 +53,9 @@ def generate_audio_response(text_to_speak):
         print("Failed to play audio")
 
 for raw_prompt in get_user_prompt():
-    listen(raw_prompt)
+    user_prompt = listen(raw_prompt)
+    if user_prompt is None:
+        print("No valid intent detected. Skipping LLM processing.")
+        continue 
     inference = query_llm(user_prompt)
     generate_audio_response(inference)
